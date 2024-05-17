@@ -1,0 +1,69 @@
+{% extends "empty.html.jinja2" %}
+
+{% block empty_content %}
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand ms-lg-5" href="/">Kristof Coenen</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-lg-5 mt-3 mt-lg-0">
+                {% for nav_link in base_common.nav_links %}
+                {% match nav_link.children %}
+                {% when None %}
+                <li class="nav-item">
+                    {% if nav_link.name == base_specific.current_link.name %}
+                    <a class="nav-link active" aria-current="page" href="{{ nav_link.url }}">
+                        {{ nav_link.name }}
+                    </a>
+                    {% else %}
+                    <a class="nav-link" href="{{ nav_link.url }}">
+                        {{ nav_link.name }}
+                    </a>
+                    {% endif %}
+                </li>
+                {% when Some with (children) %}
+                <li class="nav-item dropdown show">
+                    {% if nav_link.name == base_specific.current_link.name %}
+                    <a class="nav-link dropdown-toggle active" aria-current="page" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ nav_link.name }}
+                    </a>
+                    {% else %}
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        {{ nav_link.name }}
+                    </a>
+                    {% endif %}
+                    <ul class="dropdown-menu">
+                        {% for nav_link_child in children %}
+                        <li><a class="dropdown-item" href="{{ nav_link_child.url }}">{{ nav_link_child.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                {% endmatch %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</nav>
+
+{% block base_content %}{% endblock %}
+
+<!-- Footer-->
+<footer class="text-center pt-5 pb-5">
+    <div class="container px-4 px-lg-5">
+        <p class="text-muted small mb-0">
+            <a href="tel:{{ base_common.phone_number }}" class="no-wrap px-2">{{ base_common.phone_number }}</a>
+            <a href="mailto:{{ base_common.email }}" class="no-wrap px-2">{{ base_common.email }}</a>
+            <span class="no-wrap px-2">{{ base_common.vat_number }}</span>
+        </p>
+        <p class="text-muted small mb-0">Copyright &copy; Kristof Coenen</p>
+        <p class="text-muted small mb-0">Made by <a target="_blank" href="https://jensw.be">JenswBE</a></p>
+    </div>
+</footer>
+{% endblock %}
+
+{% block empty_body_end %}{% block base_body_end %}{% endblock %}{% endblock %}

@@ -1,0 +1,52 @@
+{
+  "collection": "realisations",
+  "field": "main_image",
+  "type": "uuid",
+  "meta": {
+    "collection": "realisations",
+    "conditions": null,
+    "display": "image",
+    "display_options": null,
+    "field": "main_image",
+    "group": null,
+    "hidden": false,
+    "interface": "file-image",
+    "note": "Wordt getoond op de startpagina",
+    "options": {
+      "crop": false,
+      "folder": "a1ec3607-98aa-43ca-bfaf-202e69c7a674"
+    },
+    "readonly": false,
+    "required": true,
+    "sort": 5,
+    "special": [
+      "file"
+    ],
+    "translations": [
+      {
+        "language": "nl-NL",
+        "translation": "Hoofdfoto"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  },
+  "schema": {
+    "name": "main_image",
+    "table": "realisations",
+    "data_type": "uuid",
+    "default_value": null,
+    "max_length": null,
+    "numeric_precision": null,
+    "numeric_scale": null,
+    "is_nullable": false,
+    "is_unique": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": "directus_files",
+    "foreign_key_column": "id"
+  }
+}

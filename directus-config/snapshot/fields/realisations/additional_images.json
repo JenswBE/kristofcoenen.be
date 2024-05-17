@@ -1,0 +1,35 @@
+{
+  "collection": "realisations",
+  "field": "additional_images",
+  "type": "alias",
+  "meta": {
+    "collection": "realisations",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "additional_images",
+    "group": null,
+    "hidden": false,
+    "interface": "files",
+    "note": null,
+    "options": {
+      "folder": "a1ec3607-98aa-43ca-bfaf-202e69c7a674",
+      "limit": 50
+    },
+    "readonly": false,
+    "required": false,
+    "sort": 6,
+    "special": [
+      "files"
+    ],
+    "translations": [
+      {
+        "language": "nl-NL",
+        "translation": "Foto's"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

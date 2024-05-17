@@ -1,0 +1,46 @@
+name: Build and publish
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: generate_website
+  cancel-in-progress: true
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      # From https://github.com/actions/cache/blob/main/examples.md#rust---cargo
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+
+      - name: Generate website
+        run: cargo run --verbose
+        env:
+          KRISTOFCOENEN_BASE_URL: ${{ vars.KRISTOFCOENEN_BASE_URL }}
+          KRISTOFCOENEN_API_BASE_URL: ${{ vars.KRISTOFCOENEN_API_BASE_URL }}
+          KRISTOFCOENEN_API_KEY: ${{ secrets.KRISTOFCOENEN_API_KEY }}
+
+      - name: Publish to GitHub Pages
+        if: github.event_name != 'pull_request'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output

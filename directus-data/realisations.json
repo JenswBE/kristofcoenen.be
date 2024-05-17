@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "sort": 1,
+    "name": "Poorten",
+    "slug": "poorten",
+    "main_image": "95667917-147f-4cc6-8400-49853dd16823"
+  },
+  {
+    "id": 2,
+    "sort": 2,
+    "name": "Verlichting",
+    "slug": "verlichting",
+    "main_image": "628f82ea-60eb-4636-81bd-d9eb1e18b810"
+  }
+]

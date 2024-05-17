@@ -1,0 +1,430 @@
+type Query {
+  general_settings(version: String): general_settings
+  general_settings_by_version(version: String!): version_general_settings
+  realisations(
+    filter: realisations_filter
+    sort: [String]
+    limit: Int
+    offset: Int
+    page: Int
+    search: String
+  ): [realisations!]!
+  realisations_by_id(id: ID!, version: String): realisations
+  realisations_aggregated(
+    groupBy: [String]
+    filter: realisations_filter
+    limit: Int
+    offset: Int
+    page: Int
+    search: String
+    sort: [String]
+  ): [realisations_aggregated!]!
+  realisations_by_version(version: String!, id: ID!): version_realisations
+  realisations_files(
+    filter: realisations_files_filter
+    sort: [String]
+    limit: Int
+    offset: Int
+    page: Int
+    search: String
+  ): [realisations_files!]!
+  realisations_files_by_id(id: ID!, version: String): realisations_files
+  realisations_files_aggregated(
+    groupBy: [String]
+    filter: realisations_files_filter
+    limit: Int
+    offset: Int
+    page: Int
+    search: String
+    sort: [String]
+  ): [realisations_files_aggregated!]!
+  realisations_files_by_version(version: String!, id: ID!): version_realisations_files
+}
+
+type general_settings {
+  id: ID!
+  email: String!
+  phone_number: String!
+  vat_number: String!
+}
+
+"""
+
+"""
+type version_general_settings {
+  id: ID!
+  email: String!
+  phone_number: String!
+  vat_number: String!
+}
+
+type realisations {
+  id: ID!
+  sort: Int
+  name: String!
+  """
+  Let op! Bij het aanpassen van dit veld veranderd de URL van de pagina. Hierdoor werken links die je deelde op b.v. sociale media naar deze pagina niet meer.
+  """
+  slug: String!
+  main_image(
+    filter: directus_files_filter
+    sort: [String]
+    limit: Int
+    offset: Int
+    page: Int
+    search: String
+  ): directus_files
+  additional_images(
+    filter: realisations_files_filter
+    sort: [String]
+    limit: Int
+    offset: Int
+    page: Int
+    search: String
+  ): [realisations_files]
+  additional_images_func: count_functions
+}
+
+type directus_files {
+  id: ID!
+  storage: String!
+  filename_disk: String
+  filename_download: String!
+  title: String
+  type: String
+  folder: String
+  uploaded_by: String
+  uploaded_on: Date
+  uploaded_on_func: datetime_functions
+  modified_by: String
+  modified_on: Date
+  modified_on_func: datetime_functions
+  charset: String
+  filesize: GraphQLBigInt
+  width: Int
+  height: Int
+  duration: Int
+  embed: String
+  description: String
+  location: String
+  tags: JSON
+  tags_func: count_functions
+  metadata: JSON
+  metadata_func: count_functions
+  focal_point_x: Int
+  focal_point_y: Int
+}
+
+"""
+ISO8601 Date values
+"""
+scalar Date
+
+type datetime_functions {
+  year: Int
+  month: Int
+  week: Int
+  day: Int
+  weekday: Int
+  hour: Int
+  minute: Int
+  second: Int
+}
+
+"""
+BigInt value
+"""
+scalar GraphQLBigInt
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
+
+type count_functions {
+  count: Int
+}
+
+input directus_files_filter {
+  id: string_filter_operators
+  storage: string_filter_operators
+  filename_disk: string_filter_operators
+  filename_download: string_filter_operators
+  title: string_filter_operators
+  type: string_filter_operators
+  folder: string_filter_operators
+  uploaded_by: string_filter_operators
+  uploaded_on: date_filter_operators
+  uploaded_on_func: datetime_function_filter_operators
+  modified_by: string_filter_operators
+  modified_on: date_filter_operators
+  modified_on_func: datetime_function_filter_operators
+  charset: string_filter_operators
+  filesize: big_int_filter_operators
+  width: number_filter_operators
+  height: number_filter_operators
+  duration: number_filter_operators
+  embed: string_filter_operators
+  description: string_filter_operators
+  location: string_filter_operators
+  tags: string_filter_operators
+  tags_func: count_function_filter_operators
+  metadata: string_filter_operators
+  metadata_func: count_function_filter_operators
+  focal_point_x: number_filter_operators
+  focal_point_y: number_filter_operators
+  _and: [directus_files_filter]
+  _or: [directus_files_filter]
+}
+
+input string_filter_operators {
+  _eq: String
+  _neq: String
+  _contains: String
+  _icontains: String
+  _ncontains: String
+  _starts_with: String
+  _nstarts_with: String
+  _istarts_with: String
+  _nistarts_with: String
+  _ends_with: String
+  _nends_with: String
+  _iends_with: String
+  _niends_with: String
+  _in: [String]
+  _nin: [String]
+  _null: Boolean
+  _nnull: Boolean
+  _empty: Boolean
+  _nempty: Boolean
+}
+
+input date_filter_operators {
+  _eq: String
+  _neq: String
+  _gt: String
+  _gte: String
+  _lt: String
+  _lte: String
+  _null: Boolean
+  _nnull: Boolean
+  _in: [String]
+  _nin: [String]
+  _between: [GraphQLStringOrFloat]
+  _nbetween: [GraphQLStringOrFloat]
+}
+
+"""
+A Float or a String
+"""
+scalar GraphQLStringOrFloat
+
+input datetime_function_filter_operators {
+  year: number_filter_operators
+  month: number_filter_operators
+  week: number_filter_operators
+  day: number_filter_operators
+  weekday: number_filter_operators
+  hour: number_filter_operators
+  minute: number_filter_operators
+  second: number_filter_operators
+}
+
+input number_filter_operators {
+  _eq: GraphQLStringOrFloat
+  _neq: GraphQLStringOrFloat
+  _in: [GraphQLStringOrFloat]
+  _nin: [GraphQLStringOrFloat]
+  _gt: GraphQLStringOrFloat
+  _gte: GraphQLStringOrFloat
+  _lt: GraphQLStringOrFloat
+  _lte: GraphQLStringOrFloat
+  _null: Boolean
+  _nnull: Boolean
+  _between: [GraphQLStringOrFloat]
+  _nbetween: [GraphQLStringOrFloat]
+}
+
+input big_int_filter_operators {
+  _eq: GraphQLBigInt
+  _neq: GraphQLBigInt
+  _in: [GraphQLBigInt]
+  _nin: [GraphQLBigInt]
+  _gt: GraphQLBigInt
+  _gte: GraphQLBigInt
+  _lt: GraphQLBigInt
+  _lte: GraphQLBigInt
+  _null: Boolean
+  _nnull: Boolean
+  _between: [GraphQLBigInt]
+  _nbetween: [GraphQLBigInt]
+}
+
+input count_function_filter_operators {
+  count: number_filter_operators
+}
+
+type realisations_files {
+  id: ID!
+  realisations_id(
+    filter: realisations_filter
+    sort: [String]
+    limit: Int
+    offset: Int
+    page: Int
+    search: String
+  ): realisations
+  directus_files_id(
+    filter: directus_files_filter
+    sort: [String]
+    limit: Int
+    offset: Int
+    page: Int
+    search: String
+  ): directus_files
+  sort: Int
+}
+
+input realisations_filter {
+  id: number_filter_operators
+  sort: number_filter_operators
+  name: string_filter_operators
+  slug: string_filter_operators
+  main_image: directus_files_filter
+  additional_images: realisations_files_filter
+  additional_images_func: count_function_filter_operators
+  _and: [realisations_filter]
+  _or: [realisations_filter]
+}
+
+input realisations_files_filter {
+  id: number_filter_operators
+  realisations_id: realisations_filter
+  directus_files_id: directus_files_filter
+  sort: number_filter_operators
+  _and: [realisations_files_filter]
+  _or: [realisations_files_filter]
+}
+
+type realisations_aggregated {
+  group: JSON
+  countAll: Int
+  count: realisations_aggregated_count
+  countDistinct: realisations_aggregated_count
+  avg: realisations_aggregated_fields
+  sum: realisations_aggregated_fields
+  avgDistinct: realisations_aggregated_fields
+  sumDistinct: realisations_aggregated_fields
+  min: realisations_aggregated_fields
+  max: realisations_aggregated_fields
+}
+
+type realisations_aggregated_count {
+  id: Int
+  sort: Int
+  name: Int
+  """
+  Let op! Bij het aanpassen van dit veld veranderd de URL van de pagina. Hierdoor werken links die je deelde op b.v. sociale media naar deze pagina niet meer.
+  """
+  slug: Int
+  """
+  Wordt getoond op de startpagina
+  """
+  main_image: Int
+  additional_images: Int
+}
+
+type realisations_aggregated_fields {
+  id: Float
+  sort: Float
+}
+
+"""
+
+"""
+type version_realisations {
+  id: ID!
+  sort: Int
+  name: String!
+  """
+  Let op! Bij het aanpassen van dit veld veranderd de URL van de pagina. Hierdoor werken links die je deelde op b.v. sociale media naar deze pagina niet meer.
+  """
+  slug: String!
+  main_image: JSON
+  additional_images: JSON
+  additional_images_func: count_functions
+}
+
+type realisations_files_aggregated {
+  group: JSON
+  countAll: Int
+  count: realisations_files_aggregated_count
+  countDistinct: realisations_files_aggregated_count
+  avg: realisations_files_aggregated_fields
+  sum: realisations_files_aggregated_fields
+  avgDistinct: realisations_files_aggregated_fields
+  sumDistinct: realisations_files_aggregated_fields
+  min: realisations_files_aggregated_fields
+  max: realisations_files_aggregated_fields
+}
+
+type realisations_files_aggregated_count {
+  id: Int
+  realisations_id: Int
+  directus_files_id: Int
+  sort: Int
+}
+
+type realisations_files_aggregated_fields {
+  id: Float
+  realisations_id: Float
+  sort: Float
+}
+
+"""
+
+"""
+type version_realisations_files {
+  id: ID!
+  realisations_id: JSON
+  directus_files_id: JSON
+  sort: Int
+}
+
+type Subscription {
+  directus_files_mutated(event: EventEnum): directus_files_mutated
+  general_settings_mutated(event: EventEnum): general_settings_mutated
+  realisations_mutated(event: EventEnum): realisations_mutated
+  realisations_files_mutated(event: EventEnum): realisations_files_mutated
+}
+
+type directus_files_mutated {
+  key: ID!
+  event: EventEnum
+  data: directus_files
+}
+
+enum EventEnum {
+  create
+  update
+  delete
+}
+
+type general_settings_mutated {
+  key: ID!
+  event: EventEnum
+  data: general_settings
+}
+
+type realisations_mutated {
+  key: ID!
+  event: EventEnum
+  data: realisations
+}
+
+type realisations_files_mutated {
+  key: ID!
+  event: EventEnum
+  data: realisations_files
+}
+

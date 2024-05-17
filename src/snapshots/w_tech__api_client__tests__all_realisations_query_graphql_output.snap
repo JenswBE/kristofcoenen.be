@@ -1,0 +1,17 @@
+---
+source: src/api_client.rs
+expression: operation.query
+---
+query AllRealisations {
+  realisations {
+    name
+    slogan
+    slug
+    main_image {
+      id
+    }
+    additional_images {
+      id
+    }
+  }
+}
