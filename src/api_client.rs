@@ -158,7 +158,15 @@ impl Client {
         {
             let mut file = File::create(&output_path)
                 .expect(&format!("Unable to create file: {}", output_path.display()));
-            copy(&mut resp, &mut file).expect("Unable to write asset to file");
+            let file_size = copy(&mut resp, &mut file).expect("Unable to write asset to file");
+            if file_size == 0 {
+                log::error!(
+                    "Fetching asset {} (status {}) returned an empty body",
+                    asset_url,
+                    resp.status().as_u16(),
+                );
+                panic!("Fetched asset is empty")
+            }
             file.sync_all().expect("Failed to flush asset file");
         }
 
