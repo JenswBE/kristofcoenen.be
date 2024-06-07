@@ -17,7 +17,7 @@ npx directus-sync push -c directus-sync/local.js
 ./directus-data/push.sh
 
 # Run static site generator
-sudo apt install -y libssl-dev pkg-config
+sudo apt install -y build-essential libssl-dev pkg-config
 cargo install cargo-watch
 cargo watch -x run
 
