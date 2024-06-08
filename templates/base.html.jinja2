@@ -37,7 +37,7 @@
                         {{ nav_link.name }}
                     </a>
                     {% endif %}
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu dropdown-menu-end">
                         {% for nav_link_child in children %}
                         <li><a class="dropdown-item" href="{{ nav_link_child.url }}">{{ nav_link_child.name }}</a></li>
                         {% endfor %}
