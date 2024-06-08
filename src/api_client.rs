@@ -137,15 +137,18 @@ impl Client {
         }
 
         // Fetch asset
-        let asset_url = self
+        let mut asset_url = self
             .base_url
             .join(&format!("/assets/{}/{}", id, filename))
             .unwrap();
-        log::info!("Downloading asset {} ...", filename);
-        let mut req = self.http_client.get(asset_url.as_ref());
         if let Some(key) = key {
-            req = req.query(&[("key", key), ("download", "true")]);
+            asset_url
+                .query_pairs_mut()
+                .append_pair("key", key)
+                .append_pair("download", "true");
         }
+        log::info!("Downloading asset {} ...", filename);
+        let req = self.http_client.get(asset_url.as_ref());
         let mut resp = req.send().expect("Unable to get asset");
         if !resp.status().is_success() {
             log::error!(
