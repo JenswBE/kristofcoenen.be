@@ -13,7 +13,7 @@
         "width": 604,
         "height": 340,
         "quality": 80,
-        "withoutEnlargement": true,
+        "withoutEnlargement": false,
         "format": "auto",
         "transforms": []
       },
@@ -23,7 +23,7 @@
         "width": 200,
         "height": 200,
         "quality": 80,
-        "withoutEnlargement": true,
+        "withoutEnlargement": false,
         "format": "auto",
         "transforms": []
       },
