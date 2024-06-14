@@ -1,0 +1,25 @@
+{
+  "collection": "general_settings",
+  "field": "start_image",
+  "related_collection": "directus_files",
+  "meta": {
+    "junction_field": null,
+    "many_collection": "general_settings",
+    "many_field": "start_image",
+    "one_allowed_collections": null,
+    "one_collection": "directus_files",
+    "one_collection_field": null,
+    "one_deselect_action": "nullify",
+    "one_field": null,
+    "sort_field": null
+  },
+  "schema": {
+    "table": "general_settings",
+    "column": "start_image",
+    "foreign_key_table": "directus_files",
+    "foreign_key_column": "id",
+    "constraint_name": "general_settings_start_image_foreign",
+    "on_update": "NO ACTION",
+    "on_delete": "NO ACTION"
+  }
+}

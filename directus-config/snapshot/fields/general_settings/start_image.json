@@ -1,0 +1,51 @@
+{
+  "collection": "general_settings",
+  "field": "start_image",
+  "type": "uuid",
+  "meta": {
+    "collection": "general_settings",
+    "conditions": null,
+    "display": "image",
+    "display_options": null,
+    "field": "start_image",
+    "group": null,
+    "hidden": false,
+    "interface": "file-image",
+    "note": null,
+    "options": {
+      "crop": false
+    },
+    "readonly": false,
+    "required": false,
+    "sort": 5,
+    "special": [
+      "file"
+    ],
+    "translations": [
+      {
+        "language": "nl-NL",
+        "translation": "Foto op startpagina"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  },
+  "schema": {
+    "name": "start_image",
+    "table": "general_settings",
+    "data_type": "uuid",
+    "default_value": null,
+    "max_length": null,
+    "numeric_precision": null,
+    "numeric_scale": null,
+    "is_nullable": false,
+    "is_unique": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": "directus_files",
+    "foreign_key_column": "id"
+  }
+}

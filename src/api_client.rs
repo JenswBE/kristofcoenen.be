@@ -199,6 +199,8 @@ pub struct GeneralSettings {
     pub phone_number: String,
     #[cynic(rename = "vat_number")]
     pub vat_number: String,
+    #[cynic(rename = "start_image")]
+    pub start_image: Option<DirectusFile>,
 }
 
 #[derive(cynic::QueryFragment, Debug)]

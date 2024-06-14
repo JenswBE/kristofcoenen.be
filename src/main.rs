@@ -34,6 +34,7 @@ struct TemplateBaseSpecific<'a> {
 struct TemplateIndex<'a> {
     base_common: &'a TemplateBaseCommon<'a>,
     base_specific: TemplateBaseSpecific<'a>,
+    start_image_id: String,
     realisations: &'a Vec<Realisation>,
 }
 
@@ -121,6 +122,16 @@ fn main() {
     };
 
     // Generate index page
+    let index_start_image_id = general_settings
+        .start_image
+        .expect("Start image must be defined in general settings")
+        .id
+        .into_inner();
+    client.queue_asset(
+        index_start_image_id.clone(),
+        "jpg",
+        Some("index-start-image"),
+    );
     let sitemap_url = derive_sitemap_url(&base_url, "");
     renderer.render_page(
         "index.html",
@@ -131,6 +142,7 @@ fn main() {
                 current_link: &nav_link_start,
                 title: "Start".to_string(),
             },
+            start_image_id: index_start_image_id,
             realisations: &realisations,
         }
         .render()

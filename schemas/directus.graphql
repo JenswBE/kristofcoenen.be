@@ -42,31 +42,11 @@ type Query {
 }
 
 type general_settings {
-  id: ID!
   email: String!
+  id: ID!
   phone_number: String!
   vat_number: String!
-}
-
-"""
-
-"""
-type version_general_settings {
-  id: ID!
-  email: String!
-  phone_number: String!
-  vat_number: String!
-}
-
-type realisations {
-  id: ID!
-  sort: Int
-  name: String!
-  """
-  Let op! Bij het aanpassen van dit veld veranderd de URL van de pagina. Hierdoor werken links die je deelde op b.v. sociale media naar deze pagina niet meer.
-  """
-  slug: String!
-  main_image(
+  start_image(
     filter: directus_files_filter
     sort: [String]
     limit: Int
@@ -74,15 +54,6 @@ type realisations {
     page: Int
     search: String
   ): directus_files
-  additional_images(
-    filter: realisations_files_filter
-    sort: [String]
-    limit: Int
-    offset: Int
-    page: Int
-    search: String
-  ): [realisations_files]
-  additional_images_func: count_functions
 }
 
 type directus_files {
@@ -264,7 +235,53 @@ input count_function_filter_operators {
   count: number_filter_operators
 }
 
+"""
+
+"""
+type version_general_settings {
+  email: String!
+  id: ID!
+  phone_number: String!
+  vat_number: String!
+  start_image: JSON
+}
+
+type realisations {
+  id: ID!
+  main_image(
+    filter: directus_files_filter
+    sort: [String]
+    limit: Int
+    offset: Int
+    page: Int
+    search: String
+  ): directus_files
+  name: String!
+  """
+  Let op! Bij het aanpassen van dit veld veranderd de URL van de pagina. Hierdoor werken links die je deelde op b.v. sociale media naar deze pagina niet meer.
+  """
+  slug: String!
+  sort: Int
+  additional_images(
+    filter: realisations_files_filter
+    sort: [String]
+    limit: Int
+    offset: Int
+    page: Int
+    search: String
+  ): [realisations_files]
+  additional_images_func: count_functions
+}
+
 type realisations_files {
+  directus_files_id(
+    filter: directus_files_filter
+    sort: [String]
+    limit: Int
+    offset: Int
+    page: Int
+    search: String
+  ): directus_files
   id: ID!
   realisations_id(
     filter: realisations_filter
@@ -274,23 +291,15 @@ type realisations_files {
     page: Int
     search: String
   ): realisations
-  directus_files_id(
-    filter: directus_files_filter
-    sort: [String]
-    limit: Int
-    offset: Int
-    page: Int
-    search: String
-  ): directus_files
   sort: Int
 }
 
 input realisations_filter {
   id: number_filter_operators
-  sort: number_filter_operators
+  main_image: directus_files_filter
   name: string_filter_operators
   slug: string_filter_operators
-  main_image: directus_files_filter
+  sort: number_filter_operators
   additional_images: realisations_files_filter
   additional_images_func: count_function_filter_operators
   _and: [realisations_filter]
@@ -298,9 +307,9 @@ input realisations_filter {
 }
 
 input realisations_files_filter {
+  directus_files_id: directus_files_filter
   id: number_filter_operators
   realisations_id: realisations_filter
-  directus_files_id: directus_files_filter
   sort: number_filter_operators
   _and: [realisations_files_filter]
   _or: [realisations_files_filter]
@@ -321,16 +330,16 @@ type realisations_aggregated {
 
 type realisations_aggregated_count {
   id: Int
-  sort: Int
+  """
+  Wordt getoond op de startpagina
+  """
+  main_image: Int
   name: Int
   """
   Let op! Bij het aanpassen van dit veld veranderd de URL van de pagina. Hierdoor werken links die je deelde op b.v. sociale media naar deze pagina niet meer.
   """
   slug: Int
-  """
-  Wordt getoond op de startpagina
-  """
-  main_image: Int
+  sort: Int
   additional_images: Int
 }
 
@@ -344,13 +353,13 @@ type realisations_aggregated_fields {
 """
 type version_realisations {
   id: ID!
-  sort: Int
+  main_image: JSON
   name: String!
   """
   Let op! Bij het aanpassen van dit veld veranderd de URL van de pagina. Hierdoor werken links die je deelde op b.v. sociale media naar deze pagina niet meer.
   """
   slug: String!
-  main_image: JSON
+  sort: Int
   additional_images: JSON
   additional_images_func: count_functions
 }
@@ -369,9 +378,9 @@ type realisations_files_aggregated {
 }
 
 type realisations_files_aggregated_count {
+  directus_files_id: Int
   id: Int
   realisations_id: Int
-  directus_files_id: Int
   sort: Int
 }
 
@@ -385,9 +394,9 @@ type realisations_files_aggregated_fields {
 
 """
 type version_realisations_files {
+  directus_files_id: JSON
   id: ID!
   realisations_id: JSON
-  directus_files_id: JSON
   sort: Int
 }
 
