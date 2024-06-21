@@ -16,6 +16,16 @@
 }
 
 /* GENERAL - NAVBAR */
+@media (prefers-color-scheme: dark) {
+  img.navbar-brand-light {
+    display: inline !important;
+  }
+
+  img.navbar-brand-dark {
+    display: none;
+  }
+}
+
 .nav-link,
 .nav-item .dropdown-item {
   font-size: 1.2rem;
