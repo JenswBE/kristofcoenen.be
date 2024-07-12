@@ -38,9 +38,11 @@ jobs:
           KRISTOFCOENEN_API_BASE_URL: ${{ vars.KRISTOFCOENEN_API_BASE_URL }}
           KRISTOFCOENEN_API_KEY: ${{ secrets.KRISTOFCOENEN_API_KEY }}
 
-      - name: Publish to GitHub Pages
-        if: github.event_name != 'pull_request'
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Publish website
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./output
+          server: ftp.kristofcoenen.be
+          username: kristofcoenen.be
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./output/
+          server-dir: /customers/4/c/d/kristofcoenen.be/httpd.www/
