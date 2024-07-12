@@ -1,1 +1,29 @@
-[]
+[
+  {
+    "name": "Regenerate website",
+    "icon": "bolt",
+    "color": null,
+    "description": null,
+    "status": "active",
+    "trigger": "event",
+    "accountability": "all",
+    "options": {
+      "type": "action",
+      "scope": [
+        "items.create",
+        "items.update",
+        "items.delete",
+        "items.promote",
+        "items.sort"
+      ],
+      "collections": [
+        "realisations",
+        "directus_files",
+        "realisations_files",
+        "general_settings"
+      ]
+    },
+    "operation": "8b3439d0-b245-45f2-b576-96896d77e835",
+    "_syncId": "dc4b078b-7426-44c2-a093-d0ac69240c0c"
+  }
+]

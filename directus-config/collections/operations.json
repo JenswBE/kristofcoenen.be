@@ -1,1 +1,113 @@
-[]
+[
+  {
+    "name": "Check debounce value is still the same",
+    "key": "check_debounce_value",
+    "type": "condition",
+    "position_x": 40,
+    "position_y": 21,
+    "options": {
+      "filter": {
+        "run_id": {
+          "_eq": "{{ get_debounce_value.value }}"
+        }
+      }
+    },
+    "resolve": "f156451f-e72d-402f-900c-f2c348bc1e28",
+    "reject": null,
+    "flow": "dc4b078b-7426-44c2-a093-d0ac69240c0c",
+    "_syncId": "625944bc-c8b0-4142-9515-0372405517e2"
+  },
+  {
+    "name": "Dispatch GitHub Actions",
+    "key": "dispatch_github_actions",
+    "type": "request",
+    "position_x": 22,
+    "position_y": 39,
+    "options": {
+      "method": "POST",
+      "url": "https://api.github.com/repos/JenswBE/kristofcoenen.be/actions/workflows/98589701/dispatches",
+      "headers": [
+        {
+          "header": "Accept",
+          "value": "application/vnd.github+json"
+        },
+        {
+          "header": "X-GitHub-Api-Version",
+          "value": "2022-11-28"
+        },
+        {
+          "header": "Authorization",
+          "value": "Bearer {{ $env.FLOWS_ENV_GITHUB_TOKEN }}"
+        }
+      ],
+      "body": "{\"ref\":\"main\"}"
+    },
+    "resolve": null,
+    "reject": null,
+    "flow": "dc4b078b-7426-44c2-a093-d0ac69240c0c",
+    "_syncId": "f156451f-e72d-402f-900c-f2c348bc1e28"
+  },
+  {
+    "name": "Get debounce value",
+    "key": "get_debounce_value",
+    "type": "item-read",
+    "position_x": 22,
+    "position_y": 21,
+    "options": {
+      "collection": "flow_debounce",
+      "key": ["regenerate_website"],
+      "permissions": "$full"
+    },
+    "resolve": "625944bc-c8b0-4142-9515-0372405517e2",
+    "reject": null,
+    "flow": "dc4b078b-7426-44c2-a093-d0ac69240c0c",
+    "_syncId": "ebf31862-d9a2-45a7-bb55-48ae57d0d133"
+  },
+  {
+    "name": "Generate run ID",
+    "key": "run_id",
+    "type": "exec",
+    "position_x": 19,
+    "position_y": 1,
+    "options": {
+      "code": "module.exports = async function(data) {\n\treturn `${Date.now()}`\n}"
+    },
+    "resolve": "e11ec8dd-00ed-4d12-ad19-5cc4f7fe916a",
+    "reject": null,
+    "flow": "dc4b078b-7426-44c2-a093-d0ac69240c0c",
+    "_syncId": "8b3439d0-b245-45f2-b576-96896d77e835"
+  },
+  {
+    "name": "Set debounce value",
+    "key": "set_debounce_value",
+    "type": "item-update",
+    "position_x": 37,
+    "position_y": 1,
+    "options": {
+      "collection": "flow_debounce",
+      "payload": {
+        "value": "{{ run_id }}"
+      },
+      "key": ["regenerate_website"],
+      "permissions": "$full"
+    },
+    "resolve": "f77eb548-39f8-4297-b793-95d463c44615",
+    "reject": null,
+    "flow": "dc4b078b-7426-44c2-a093-d0ac69240c0c",
+    "_syncId": "e11ec8dd-00ed-4d12-ad19-5cc4f7fe916a"
+  },
+  {
+    "name": "Wait 3 mins for debounce",
+    "key": "wait_3_mins_for_debounce",
+    "type": "sleep",
+    "position_x": 4,
+    "position_y": 21,
+    "options": {
+      "milliseconds": 180000
+    },
+    "resolve": "ebf31862-d9a2-45a7-bb55-48ae57d0d133",
+    "reject": null,
+    "flow": "dc4b078b-7426-44c2-a093-d0ac69240c0c",
+    "_syncId": "f77eb548-39f8-4297-b793-95d463c44615"
+  }
+]
