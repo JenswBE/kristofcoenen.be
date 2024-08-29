@@ -55,7 +55,9 @@
     "position_y": 21,
     "options": {
       "collection": "flow_debounce",
-      "key": ["regenerate_website"],
+      "key": [
+        "regenerate_website"
+      ],
       "permissions": "$full"
     },
     "resolve": "625944bc-c8b0-4142-9515-0372405517e2",
@@ -88,7 +90,9 @@
       "payload": {
         "value": "{{ run_id }}"
       },
-      "key": ["regenerate_website"],
+      "key": [
+        "regenerate_website"
+      ],
       "permissions": "$full"
     },
     "resolve": "f77eb548-39f8-4297-b793-95d463c44615",
