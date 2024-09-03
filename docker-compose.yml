@@ -19,6 +19,7 @@ services:
       DB_PASSWORD: directus
       ADMIN_EMAIL: admin@example.com
       ADMIN_PASSWORD: admin
+      ADMIN_TOKEN: token_admin
 
   db:
     image: docker.io/library/postgres:16

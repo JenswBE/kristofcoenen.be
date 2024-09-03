@@ -47,7 +47,5 @@ npx directus-sync push -c directus-sync/prod.secret.js
 
 ```bash
 cargo install --locked cynic-cli
-KRISTOFCOENEN_API_BASE_URL=''
-KRISTOFCOENEN_API_KEY=''
-cynic introspect -H "Authorization: Bearer ${KRISTOFCOENEN_API_KEY:?}" "${KRISTOFCOENEN_API_BASE_URL:?}/graphql" -o schemas/directus.graphql
+cynic introspect -H 'Authorization: Bearer token_generator' 'http://localhost:8055/graphql' -o schemas/directus.graphql
 ```

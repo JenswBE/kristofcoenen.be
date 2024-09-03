@@ -12,7 +12,7 @@ use std::{env, fs, io};
 
 const LOCAL_BASE_URL: &'static str = "http://localhost:8000";
 const LOCAL_API_BASE_URL: &'static str = "http://localhost:8055";
-const LOCAL_API_KEY: &'static str = "cm6y72z21fwpDWgBvi17zLLYjLSP6oC1";
+const LOCAL_API_KEY: &'static str = "token_generator";
 
 /// Fields present in each template with the same value.
 struct TemplateBaseCommon<'a> {
