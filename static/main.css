@@ -16,6 +16,16 @@
 }
 
 /* GENERAL - NAVBAR */
+nav {
+  background-color: rgb(248, 249, 250);
+}
+
+@media (prefers-color-scheme: dark) {
+  nav {
+    background-color: rgb(33, 37, 41);
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   img.navbar-brand-light {
     display: inline !important;

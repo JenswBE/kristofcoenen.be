@@ -44,29 +44,8 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
         integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="/css/style.css" rel="stylesheet" />
-    <script>
-        // Based on https://stackoverflow.com/a/75065536
-        // Set theme to the user's preferred color scheme
-        function updateTheme() {
-            const colorMode = window.matchMedia("(prefers-color-scheme: dark)")
-                .matches
-                ? "dark"
-                : "light";
-            document.querySelector("html").setAttribute("data-bs-theme", colorMode);
-            let navClasses = document.querySelector("nav").classList;
-            navClasses.remove("bg-light", "bg-dark");
-            navClasses.add("bg-" + colorMode);
-        }
-
-        // Set theme on load
-        updateTheme();
-
-        // Update theme when the preferred scheme changes
-        window
-            .matchMedia("(prefers-color-scheme: dark)")
-            .addEventListener("change", updateTheme);
-    </script>
+    <link href="/main.css" rel="stylesheet" />
+    <script src="/update-theme.js"></script>
 </head>
 
 <body id="page-top">
