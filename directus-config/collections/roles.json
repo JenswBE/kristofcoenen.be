@@ -1,22 +1,23 @@
 [
   {
+    "name": "Administrator",
+    "icon": "verified",
+    "description": "$t:admin_description",
+    "parent": null,
+    "_syncId": "_sync_default_admin_role"
+  },
+  {
     "name": "Content editor",
     "icon": "accessibility",
     "description": "Can edit all content",
-    "ip_access": null,
-    "enforce_tfa": false,
-    "admin_access": false,
-    "app_access": true,
+    "parent": null,
     "_syncId": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99"
   },
   {
     "name": "Static site generator",
     "icon": "construction",
     "description": "Can read minimal resources to build a static website",
-    "ip_access": null,
-    "enforce_tfa": false,
-    "admin_access": false,
-    "app_access": false,
+    "parent": null,
     "_syncId": "3812ce42-b342-40a8-944c-ece7cd186906"
   }
 ]

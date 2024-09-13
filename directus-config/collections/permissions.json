@@ -1,6 +1,53 @@
 [
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
+    "collection": "directus_files",
+    "action": "read",
+    "permissions": {},
+    "validation": {},
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "116bc787-7cba-47d4-ba8a-55c0d8454442",
+    "_syncId": "5f1ff06c-e38e-4598-999a-02b901d2b88b"
+  },
+  {
+    "collection": "general_settings",
+    "action": "read",
+    "permissions": {},
+    "validation": {},
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "116bc787-7cba-47d4-ba8a-55c0d8454442",
+    "_syncId": "0acc9e9c-0088-4e0b-a166-5f9e9f9253b3"
+  },
+  {
+    "collection": "realisations_files",
+    "action": "read",
+    "permissions": {},
+    "validation": {},
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "116bc787-7cba-47d4-ba8a-55c0d8454442",
+    "_syncId": "d01161bd-9f7f-4015-a989-0467df6b4173"
+  },
+  {
+    "collection": "realisations",
+    "action": "read",
+    "permissions": {},
+    "validation": {},
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "116bc787-7cba-47d4-ba8a-55c0d8454442",
+    "_syncId": "fe2feb7b-5576-4474-845f-488408ce2ecf"
+  },
+  {
     "collection": "directus_dashboards",
     "action": "create",
     "permissions": {},
@@ -9,10 +56,10 @@
     "fields": [
       "*"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "5f7d10e5-f624-4f95-a5a4-3d0fd2a29dde"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "directus_dashboards",
     "action": "delete",
     "permissions": {},
@@ -21,10 +68,10 @@
     "fields": [
       "*"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "732a7f3b-0fa6-4b5a-84ed-13fc0feca6b0"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "directus_dashboards",
     "action": "read",
     "permissions": {},
@@ -33,10 +80,10 @@
     "fields": [
       "*"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "64f043cb-5e2b-443c-8827-5a164c15c1b1"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "directus_dashboards",
     "action": "update",
     "permissions": {},
@@ -45,10 +92,10 @@
     "fields": [
       "*"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "15bfe15b-3127-41b1-a72f-16da18eb49cf"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "directus_files",
     "action": "create",
     "permissions": {},
@@ -57,10 +104,10 @@
     "fields": [
       "*"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "0e61d2a0-3154-41bb-ae76-f5e9571b0fda"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "directus_files",
     "action": "delete",
     "permissions": {},
@@ -69,10 +116,10 @@
     "fields": [
       "*"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "01ca5519-15d8-426c-b18a-a3596a01d6f8"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "directus_files",
     "action": "read",
     "permissions": {},
@@ -81,10 +128,10 @@
     "fields": [
       "*"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "75ed1f36-ac47-424f-ab23-b43500cc42b9"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "directus_files",
     "action": "update",
     "permissions": {},
@@ -93,10 +140,10 @@
     "fields": [
       "*"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "072c3cd5-5451-4de1-bfbc-ce65c3b7693b"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "directus_flows",
     "action": "read",
     "permissions": {
@@ -115,10 +162,10 @@
       "options",
       "trigger"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "e2088381-34b2-4a7a-8d0d-32755b5822d3"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "directus_folders",
     "action": "create",
     "permissions": {},
@@ -127,20 +174,20 @@
     "fields": [
       "*"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "e2adde20-3474-4548-804c-89d97f51bf24"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "directus_folders",
     "action": "delete",
     "permissions": {},
     "validation": null,
     "presets": null,
     "fields": null,
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "2a1470ba-3b00-4a1c-b670-bcb6133d6ce6"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "directus_folders",
     "action": "read",
     "permissions": {},
@@ -149,10 +196,10 @@
     "fields": [
       "*"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "eb60be5a-a55e-40ec-9236-aa0dd0b5514c"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "directus_folders",
     "action": "update",
     "permissions": {},
@@ -161,10 +208,10 @@
     "fields": [
       "*"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "1a32bfe3-69f8-4ccb-9f77-73d20fb5eb5a"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "directus_panels",
     "action": "create",
     "permissions": {},
@@ -173,10 +220,10 @@
     "fields": [
       "*"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "87c77dd3-92f2-4a12-a492-5c9a9997d0a6"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "directus_panels",
     "action": "delete",
     "permissions": {},
@@ -185,10 +232,10 @@
     "fields": [
       "*"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "0a97adb5-a0c4-4c39-8a3d-157bcc2fc125"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "directus_panels",
     "action": "read",
     "permissions": {},
@@ -197,10 +244,10 @@
     "fields": [
       "*"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "13fcc61d-7feb-4260-bea1-e02fa0f4d47c"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "directus_panels",
     "action": "update",
     "permissions": {},
@@ -209,10 +256,10 @@
     "fields": [
       "*"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "536c4ce8-d400-4c7e-8570-c3b7ed391f5f"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "directus_roles",
     "action": "read",
     "permissions": {},
@@ -221,10 +268,10 @@
     "fields": [
       "*"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "212e8177-2682-4f53-ac9e-2280bc574c8c"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "directus_shares",
     "action": "create",
     "permissions": {},
@@ -233,10 +280,10 @@
     "fields": [
       "*"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "8e256685-6f71-48d3-9aa7-4f7a2573707d"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "directus_shares",
     "action": "delete",
     "permissions": {
@@ -249,10 +296,10 @@
     "fields": [
       "*"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "2b5304e8-470c-4edd-8c49-6e52c9bfcb4d"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "directus_shares",
     "action": "read",
     "permissions": {
@@ -274,10 +321,10 @@
     "fields": [
       "*"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "cb2891e8-eba4-47bf-827f-d3664769bf4b"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "directus_shares",
     "action": "update",
     "permissions": {
@@ -290,10 +337,10 @@
     "fields": [
       "*"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "caa5732d-60b7-45a2-9b46-1dff32e71e29"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "directus_users",
     "action": "read",
     "permissions": {},
@@ -302,10 +349,10 @@
     "fields": [
       "*"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "a9d2f3ad-f04b-4083-9d6b-e32a52bdfc85"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "directus_users",
     "action": "update",
     "permissions": {
@@ -332,10 +379,10 @@
       "theme_dark_overrides",
       "tfa_secret"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "0f9e4af9-5ab9-48d7-93c8-af450ae07c7d"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "general_settings",
     "action": "create",
     "permissions": {},
@@ -344,10 +391,10 @@
     "fields": [
       "*"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "71bd62a5-d163-4d17-9b1b-9e5a64de08e2"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "general_settings",
     "action": "read",
     "permissions": {},
@@ -356,10 +403,10 @@
     "fields": [
       "*"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "c741d78c-7ec1-4895-af2d-f894ddcdd7ed"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "general_settings",
     "action": "update",
     "permissions": {},
@@ -368,10 +415,10 @@
     "fields": [
       "*"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "82b1030f-dc1f-420b-8b62-104dbe22158d"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "realisations_files",
     "action": "create",
     "permissions": {},
@@ -380,10 +427,10 @@
     "fields": [
       "*"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "70a12e34-3e57-49ae-acb9-c3cfda2b474a"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "realisations_files",
     "action": "delete",
     "permissions": {},
@@ -392,10 +439,10 @@
     "fields": [
       "*"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "f8abd07e-ddae-4c3d-a4c5-eb60d964264e"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "realisations_files",
     "action": "read",
     "permissions": {},
@@ -404,10 +451,10 @@
     "fields": [
       "*"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "457caeae-45ac-41f8-b50f-91addc148111"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "realisations_files",
     "action": "update",
     "permissions": {},
@@ -416,10 +463,10 @@
     "fields": [
       "*"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "99a41579-9131-4581-b115-a22928453acb"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "realisations",
     "action": "create",
     "permissions": {},
@@ -428,10 +475,10 @@
     "fields": [
       "*"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "eb285294-a8f2-47c9-9047-94b75445eaf0"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "realisations",
     "action": "delete",
     "permissions": {},
@@ -440,10 +487,10 @@
     "fields": [
       "*"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "b2b415da-b939-42d0-a2c2-7eef98ed1f69"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "realisations",
     "action": "read",
     "permissions": {},
@@ -452,10 +499,10 @@
     "fields": [
       "*"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "1679dafb-a34b-446b-bb9a-f1d3019094f8"
   },
   {
-    "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
     "collection": "realisations",
     "action": "update",
     "permissions": {},
@@ -464,54 +511,7 @@
     "fields": [
       "*"
     ],
+    "policy": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3",
     "_syncId": "6cdcd253-896b-4d7b-84e8-25905c80ef61"
-  },
-  {
-    "role": "3812ce42-b342-40a8-944c-ece7cd186906",
-    "collection": "directus_files",
-    "action": "read",
-    "permissions": {},
-    "validation": {},
-    "presets": null,
-    "fields": [
-      "*"
-    ],
-    "_syncId": "5f1ff06c-e38e-4598-999a-02b901d2b88b"
-  },
-  {
-    "role": "3812ce42-b342-40a8-944c-ece7cd186906",
-    "collection": "general_settings",
-    "action": "read",
-    "permissions": {},
-    "validation": {},
-    "presets": null,
-    "fields": [
-      "*"
-    ],
-    "_syncId": "0acc9e9c-0088-4e0b-a166-5f9e9f9253b3"
-  },
-  {
-    "role": "3812ce42-b342-40a8-944c-ece7cd186906",
-    "collection": "realisations_files",
-    "action": "read",
-    "permissions": {},
-    "validation": {},
-    "presets": null,
-    "fields": [
-      "*"
-    ],
-    "_syncId": "d01161bd-9f7f-4015-a989-0467df6b4173"
-  },
-  {
-    "role": "3812ce42-b342-40a8-944c-ece7cd186906",
-    "collection": "realisations",
-    "action": "read",
-    "permissions": {},
-    "validation": {},
-    "presets": null,
-    "fields": [
-      "*"
-    ],
-    "_syncId": "fe2feb7b-5576-4474-845f-488408ce2ecf"
   }
 ]

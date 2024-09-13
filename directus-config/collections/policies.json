@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Administrator",
+    "icon": "verified",
+    "description": "$t:admin_policy_description",
+    "ip_access": null,
+    "enforce_tfa": false,
+    "admin_access": true,
+    "app_access": true,
+    "roles": [
+      {
+        "role": "_sync_default_admin_role",
+        "sort": 1
+      }
+    ],
+    "_syncId": "_sync_default_admin_policy"
+  },
+  {
+    "name": "$t:public_label",
+    "icon": "public",
+    "description": "$t:public_description",
+    "ip_access": null,
+    "enforce_tfa": false,
+    "admin_access": false,
+    "app_access": false,
+    "roles": [
+      {
+        "role": null,
+        "sort": 1
+      }
+    ],
+    "_syncId": "_sync_default_public_policy"
+  },
+  {
+    "name": "Static site generator",
+    "icon": "construction",
+    "description": "Can read minimal resources to build a static website",
+    "ip_access": null,
+    "enforce_tfa": false,
+    "admin_access": false,
+    "app_access": false,
+    "roles": [
+      {
+        "role": "3812ce42-b342-40a8-944c-ece7cd186906",
+        "sort": 1
+      }
+    ],
+    "_syncId": "116bc787-7cba-47d4-ba8a-55c0d8454442"
+  },
+  {
+    "name": "Content editor",
+    "icon": "accessibility",
+    "description": "Can edit all content",
+    "ip_access": null,
+    "enforce_tfa": false,
+    "admin_access": false,
+    "app_access": true,
+    "roles": [
+      {
+        "role": "27c191dc-b2e0-4e4c-8d83-9c8c259c5b99",
+        "sort": 1
+      }
+    ],
+    "_syncId": "9c0f4069-22a8-4a37-9a0c-73a79c5eede3"
+  }
+]
