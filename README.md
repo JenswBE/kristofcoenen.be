@@ -12,12 +12,14 @@ podman compose up -d
 # See https://github.com/containers/podman-compose/issues/866 for more info
 podman compose restart directus
 
+# Install dependencies
+sudo apt install -y build-essential libssl-dev pkg-config jq
+
 # Sync collections and data
 npx directus-sync push -c directus-sync/local.js
 ./directus-data/push.sh
 
 # Run static site generator
-sudo apt install -y build-essential libssl-dev pkg-config
 cargo install cargo-watch
 cargo watch -x run
 

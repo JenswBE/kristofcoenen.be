@@ -45,7 +45,6 @@ type general_settings {
   email: String!
   id: ID!
   phone_number: String!
-  vat_number: String!
   start_image(
     filter: directus_files_filter
     sort: [String]
@@ -54,6 +53,7 @@ type general_settings {
     page: Int
     search: String
   ): directus_files
+  vat_number: String!
 }
 
 type directus_files {
@@ -65,8 +65,8 @@ type directus_files {
   type: String
   folder: String
   uploaded_by: String
-  uploaded_on: Date
-  uploaded_on_func: datetime_functions
+  created_on: Date
+  created_on_func: datetime_functions
   modified_by: String
   modified_on: Date
   modified_on_func: datetime_functions
@@ -84,6 +84,11 @@ type directus_files {
   metadata_func: count_functions
   focal_point_x: Int
   focal_point_y: Int
+  tus_id: String
+  tus_data: JSON
+  tus_data_func: count_functions
+  uploaded_on: Date
+  uploaded_on_func: datetime_functions
 }
 
 """
@@ -125,8 +130,8 @@ input directus_files_filter {
   type: string_filter_operators
   folder: string_filter_operators
   uploaded_by: string_filter_operators
-  uploaded_on: date_filter_operators
-  uploaded_on_func: datetime_function_filter_operators
+  created_on: date_filter_operators
+  created_on_func: datetime_function_filter_operators
   modified_by: string_filter_operators
   modified_on: date_filter_operators
   modified_on_func: datetime_function_filter_operators
@@ -144,6 +149,11 @@ input directus_files_filter {
   metadata_func: count_function_filter_operators
   focal_point_x: number_filter_operators
   focal_point_y: number_filter_operators
+  tus_id: string_filter_operators
+  tus_data: string_filter_operators
+  tus_data_func: count_function_filter_operators
+  uploaded_on: date_filter_operators
+  uploaded_on_func: datetime_function_filter_operators
   _and: [directus_files_filter]
   _or: [directus_files_filter]
 }
@@ -242,8 +252,8 @@ type version_general_settings {
   email: String!
   id: ID!
   phone_number: String!
-  vat_number: String!
   start_image: JSON
+  vat_number: String!
 }
 
 type realisations {

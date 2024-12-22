@@ -1,8 +1,9 @@
 [
   {
-    "id": 1,
     "email": "kristof.coenen84@gmail.com",
+    "id": 1,
     "phone_number": "+32 499 38 15 19",
+    "start_image": "faf63493-8440-4be1-9239-d42c8042861a",
     "vat_number": "BE0629.690.841"
   }
 ]
