@@ -22,7 +22,7 @@ services:
       ADMIN_TOKEN: token_admin
 
   db:
-    image: docker.io/library/postgres:16
+    image: docker.io/library/postgres:17
     security_opt:
       - no-new-privileges=true
     environment:
