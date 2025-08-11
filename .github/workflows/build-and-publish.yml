@@ -18,7 +18,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       # From https://github.com/actions/cache/blob/main/examples.md#rust---cargo
       - uses: actions/cache@v4
