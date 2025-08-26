@@ -39,7 +39,7 @@ jobs:
           KRISTOFCOENEN_API_KEY: ${{ secrets.KRISTOFCOENEN_API_KEY }}
 
       - name: Publish website
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
           server: ftp.kristofcoenen.be
           username: kristofcoenen.be
