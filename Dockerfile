@@ -1,4 +1,4 @@
-FROM docker.io/directus/directus:11
+FROM docker.io/directus/directus:12
 
 USER root
 RUN corepack enable
